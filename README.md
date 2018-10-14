@@ -2,3 +2,6 @@
 A HTML widget for speech recognition from audio or video
 
 https://wavesurfer-js.org/
+
+
+https://pulipulichen.github.io/HTML5-Speech-to-Text/
