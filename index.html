@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="vender/jquery.min.js"></script>
+  <script src="vender/jquery.ns-autogrow.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="vender/semantic-ui/semantic.min.css">
+  <script src="vender/semantic-ui/semantic.min.js"></script>
+
+  <script src="vender/download-as-file.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Web Speech API Demo</title>
+</head>
+<body>
+
+
+
+  <h1>Web Speech API Demo (Chinese Traditional)</h1>
+  Virtual Audio Cable
+  <a href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html" target="_blank">Windows</a>
+  |
+  <a href="https://alternativeto.net/software/virtual-audio-cable/?platform=mac" target="_blank">Mac</a>
+
+  <video controls class="audio" style="display: block;max-width: 320px;">
+    <source src="children.mp4" type="video/mp4">
+  Your browser does not support the audio element.
+  </video>
+
+  <div class="fluid ui button primary start-btn">Start</div>
+  <form class="content ui form">
+    <div class="three fields">
+      <div class="field">
+        <label>File</label>
+        <input type="text" class="filename" value="test" />
+      </div>
+      <div class="field">
+        <label>Language</label>
+        <select class="lang">
+          <option value="zh-TW">
+            zh-TW
+          </option>
+        </select>
+      </div>
+      <div class="field">
+        <button type="button" class="ui fluid disabled button primary download">
+          <i class="icon download"></i>
+          Download
+        </button>
+      </div>
+    </div>
+    <!--
+    <span class="speech"></span>
+    <span class="blinking"></span>
+    -->
+    <table class="ui striped table">
+      <thead>
+        <tr>
+          <th>
+            Start from
+          </th>
+          <th>
+            End in
+          </th>
+          <th>
+            Caption
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
