@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="vender/vue/vue.js"></script>
   <script src="vender/jquery.min.js"></script>
   <script src="vender/jquery.ns-autogrow.min.js"></script>
 
@@ -15,6 +16,8 @@
 </head>
 <body>
 
+  <div id="speechToText">
+  
   <div class="ui container">
     <h1>Webkit Speech to Text</h1>
     
@@ -35,10 +38,10 @@
       
       <div class="recognition-status" data-recognition-status="ready">
         <div class="fluid ui basic vertical buttons">
-          <a class="fluid ui button load-local-file-btn">
+          <a class="fluid ui button open-load-local-file-model-btn">
             Load Local File
           </a>
-          <a class="fluid ui button load-url-btn">
+          <a class="fluid ui button open-load-url-model-btn">
             Load from URL
           </a>
         </div>
@@ -149,19 +152,22 @@
     <div class="content">
       <div class="ui form">
         <div class="field">
-          <input type="text" name="load_from_url_value" value="children.mp4" placeholder="Audio URL" /> 
+          <input type="text" name="load_from_url_value" v-model="loadFromURLValue" placeholder="Audio URL" /> 
         </div>
       </div>
     </div>
     <div class="actions">
       <div class="ui cancel button">Cancel</div>
-      <div class="ui approve button">OK</div>
+      <div class="ui approve button" v-bind:class="{ disabled: loadFromURLValue === '' }">OK</div>
     </div>
   </div>
+  
+  </div> <!-- <div id="speechToText"> -->
   
   
   <!-- ---------------------------------- -->
   
+  <script src="vue-init.js"></script>
   <script src="script.js"></script>
   <script src="file-loader.js"></script>
 </body>

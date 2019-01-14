@@ -1,8 +1,8 @@
 
-let loadFromUrl = function () {
+let openLoadFromUrlModel = function () {
   $('.ui.modal.load-from-url').modal('show')
 }
-$('.load-url-btn').click(loadFromUrl)
+$('.open-load-url-model-btn').click(openLoadFromUrlModel)
 
 // ---------------------
 
