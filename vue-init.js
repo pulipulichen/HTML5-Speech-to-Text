@@ -3,7 +3,8 @@ var app = new Vue({
   data: {
     filename: 'SpeechToTextDemo',
     //loadFromURLValue: 'chi.ogg',
-    loadFromURLValue: 'https://www.youtube.com/watch?v=GE7sc_XvJ8w',
+    //loadFromURLValue: 'https://www.youtube.com/watch?v=GE7sc_XvJ8w',
+    loadFromURLValue: '',
     //extAudio: ['3gp','aa','aac','aax','act','aiff','amr','ape','au','awb','dct','dss','dvf','flac','gsm','iklax','ivs','m4a','m4b','m4p','mmf','mp3','mpc','msv','nsf','ogg, oga, mogg','opus','ra, rm','raw','sln','tta','vox','wav','wma','wv','webm','8svx'],
     
     // https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats
@@ -41,17 +42,30 @@ var app = new Vue({
         this.loadFromURLAudio(this.loadFromURLValue, playerContainer)
       }
     },
+    setFilename: function (filename) {
+      // https://stackoverflow.com/a/3780731
+      filename = filename.replace(/[|&;$%@"<>()+,]/g, "");
+      
+      if (filename.length > 15) {
+        filename = filename.slice(0, 15)
+      }
+      
+      this.filename = filename
+    },
     loadFromURLYouTube: function (url, playerContainer) {
       var videoId = YouTubeUtils.validateYouTubeUrl(url)
       //console.log(videoId)
       $('#audio_player').html('<div id="audio_player_youtube"></div>')
-      YouTubeUtils.setPlayer('audio_player_youtube', videoId)
+      var _this = this
+      YouTubeUtils.setPlayer('audio_player_youtube', videoId, function () {
+        _this.setFilename(YouTubeUtils.getTitle())
+      })
     },
     loadFromURLVideo: function (url, playerContainer) {
       var template = this.playerTemplate.video
       template = template.split('{{URL}}').join(url)
       playerContainer.html(template)
-      this.filename = getFilenameFromURL(url)
+      this.setFilename(getFilenameFromURL(url))
     },
     loadFromURLAudio: function (url, playerContainer) {
       var template = this.playerTemplate.audio
@@ -69,7 +83,7 @@ var app = new Vue({
       template = template.split('{{FILENAME}}').join(filename)
       
       playerContainer.html(template)
-      this.filename = getFilenameFromURL(url)
+      this.setFilename(getFilenameFromURL(url))
     },
     detectURLtype: function (url) {
       if (YouTubeUtils.validateYouTubeUrl(url) !== false) {

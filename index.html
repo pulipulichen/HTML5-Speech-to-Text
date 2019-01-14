@@ -87,7 +87,7 @@
     
     <div class="three fields content-controller">
       <div class="field">
-        <label>File</label>
+        <label>Filename</label>
         <input type="text" class="filename" v-model="filename" />
       </div>
       <div class="field">
@@ -107,8 +107,8 @@
       <div class="field">
         <label>Output type</label>
         <select class="output-data-type">
-          <option value="str">
-            Subtitle (.str)
+          <option value="srt">
+            Subtitle (.srt)
           </option>
           <option value="txt">
             Plain text (.txt)
@@ -168,7 +168,7 @@
           <ul>
             <li>YouTube，例如<a target="youtube_demo" href="https://www.youtube.com/watch?v=GE7sc_XvJ8w">https://www.youtube.com/watch?v=GE7sc_XvJ8w</a></li>
             <li>影片格式：mp4 (<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">VP8, VP9, H.264，請見支援說明</a>)</li>
-            <li>聲音格式：wav、ogg、mp3、aac、m4a  (<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">支援說明</a>)</li>
+            <li>聲音格式：wav、ogg、mp3  (<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">支援說明</a>)</li>
           </ul>
         </div>
       </div>

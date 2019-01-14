@@ -44,16 +44,14 @@ startBtn.addEventListener('click', function () {
         }
         return 
       }
-      
       setTimeout(function () {
         startRecognition()
       }, 0)
-      return
     }
-
+    
     setTimeout(() => {
       recognitionFinish()
-    }, (audioPlay.duration * 1000 + 100))
+    }, (SpeechToText.getDuration() * 1000 + 100))
     //console.log(audioPlay.duration * 1000 + 100)
 
     // $('<div>0:00</div>').insertBefore(text)
