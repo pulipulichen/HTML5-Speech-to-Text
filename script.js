@@ -23,16 +23,18 @@ startBtn.addEventListener('click', function () {
   $('.recognition-status').attr('data-recognition-status', 'wait')
   
   playingFlag = true
-  SpeechToText.setPlayer()
+  //SpeechToText.setPlayer()
   SpeechToText.addRow()
   
   var errorCount = 0
 
   var startRecognition = function () {
     try {
-      audioPlay.play()
+      //audioPlay.play()
+      SpeechToText.audioPlay()
     }
     catch (e) {
+      console.log(e)
       errorCount++
       console.log('Audio player load failed (' + errorCount + ')')
       

@@ -2,7 +2,8 @@ var app = new Vue({
   el: '#speechToText',
   data: {
     filename: 'SpeechToTextDemo',
-    loadFromURLValue: 'chi.ogg',
+    //loadFromURLValue: 'chi.ogg',
+    loadFromURLValue: 'https://www.youtube.com/watch?v=GE7sc_XvJ8w',
     //extAudio: ['3gp','aa','aac','aax','act','aiff','amr','ape','au','awb','dct','dss','dvf','flac','gsm','iklax','ivs','m4a','m4b','m4p','mmf','mp3','mpc','msv','nsf','ogg, oga, mogg','opus','ra, rm','raw','sln','tta','vox','wav','wma','wv','webm','8svx'],
     
     // https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats
@@ -28,6 +29,7 @@ var app = new Vue({
     loadFromURL: function (event) {
       //console.log(this.loadFromURLValue)
       var type = this.detectURLtype(this.loadFromURLValue)
+      console.log(type)
       var playerContainer = $('#audio_player')
       if (type === 'youtube') {
         this.loadFromURLYouTube(this.loadFromURLValue, playerContainer)
@@ -40,7 +42,10 @@ var app = new Vue({
       }
     },
     loadFromURLYouTube: function (url, playerContainer) {
-      
+      var videoId = YouTubeUtils.validateYouTubeUrl(url)
+      //console.log(videoId)
+      $('#audio_player').html('<div id="audio_player_youtube"></div>')
+      YouTubeUtils.setPlayer('audio_player_youtube', videoId)
     },
     loadFromURLVideo: function (url, playerContainer) {
       var template = this.playerTemplate.video
@@ -67,7 +72,7 @@ var app = new Vue({
       this.filename = getFilenameFromURL(url)
     },
     detectURLtype: function (url) {
-      if (validateYouTubeUrl(url) !== false) {
+      if (YouTubeUtils.validateYouTubeUrl(url) !== false) {
         return 'youtube'
       }
       else {

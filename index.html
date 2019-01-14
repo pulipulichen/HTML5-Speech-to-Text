@@ -5,6 +5,7 @@
   <script src="vender/vue/vue.js"></script>
   <script src="vender/jquery.min.js"></script>
   <script src="vender/jquery.ns-autogrow.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <link rel="stylesheet" type="text/css" href="vender/semantic-ui/semantic.min.css">
   <script src="vender/semantic-ui/semantic.min.js"></script>
@@ -65,15 +66,20 @@
         
     </div>
     <div class="twelve wide column">
-      <!--
+      
       <div id="audio_player">
+        
         <video controls class="audio-player" style="display: block;max-width: 320px;max-height: 180px;">
           <source src="chi.mp4" type="video/mp4">
           Your browser does not support the audio element.
         </video>
+        
+        <!--
+        <iframe class="audio-player youtube" width="320" height="180" src="https://www.youtube.com/embed/GE7sc_XvJ8w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="pointer-events: none;"></iframe>
+        -->
       </div>
-      -->
-      <iframe id="audio_player" width="320" height="180" src="https://www.youtube.com/embed/GE7sc_XvJ8w?t=21" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+      
     </div>
   </div>
 
