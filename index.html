@@ -65,12 +65,15 @@
         
     </div>
     <div class="twelve wide column">
+      <!--
       <div id="audio_player">
         <video controls class="audio-player" style="display: block;max-width: 320px;max-height: 180px;">
           <source src="chi.mp4" type="video/mp4">
           Your browser does not support the audio element.
         </video>
       </div>
+      -->
+      <iframe id="audio_player" width="320" height="180" src="https://www.youtube.com/embed/GE7sc_XvJ8w?t=21" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -178,8 +181,9 @@
   <!-- ---------------------------------- -->
   
   <script src="vue-init.js"></script>
-  <script src="script.js"></script>
-  <script src="file-loader.js"></script>
+  <script src="lib/speech-to-text.js"></script>
+  <script src="lib/file-loader.js"></script>
   <script src="lib/youtuble-utils.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
