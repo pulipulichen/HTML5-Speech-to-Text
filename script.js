@@ -27,6 +27,11 @@ let SpeechToText = {
     //tr.find('textarea').autogrow({vertical: true, horizontal: false})
     tr.find('textarea').css('height', '3rem')
     this.tbody.append(tr)
+
+    
+      // scroll to bottom
+      let container = $('.content')[0]
+      container.scrollTop = container.scrollHeight;
   },
   removeEmptyRow: function () {
     this.tbody.find('tr .caption textarea').each((i, caption) => {
@@ -42,7 +47,7 @@ let SpeechToText = {
   setCaption: function (caption) {
     let textarea = this.tbody.find('tr:last .caption textarea')
     textarea.val(caption.trim()).autogrow({vertical: true, horizontal: false, flickering: false})
-    //autosize.update(textarea);
+
   },
   setStart: function (time) {
     [hour, minute, second, millisecond, currentTime] = time
@@ -139,7 +144,7 @@ let audioPlay = document.querySelector('.audio')
 let recognition = new webkitSpeechRecognition()
 // set params
 recognition.continuous = false
-recognition.lang = 'en-US'
+recognition.lang = $('.lang').val()
 recognition.interimResults = true
 adjustStartSecond = -0.5
 adjustEndSecond = 0.5

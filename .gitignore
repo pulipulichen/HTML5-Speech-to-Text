@@ -2,3 +2,5 @@
 *.m4a
 *.ogg
 *.srt
+!chi.mp4
+!chi.srt
