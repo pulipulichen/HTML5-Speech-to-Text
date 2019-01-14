@@ -35,10 +35,10 @@
       
       <div class="recognition-status" data-recognition-status="ready">
         <div class="fluid ui basic vertical buttons">
-          <a class="fluid ui button">
+          <a class="fluid ui button load-local-file-btn">
             Load Local File
           </a>
-          <a class="fluid ui button">
+          <a class="fluid ui button load-url-btn">
             Load from URL
           </a>
         </div>
@@ -142,6 +142,27 @@
     
   </form>
 
+  <!-- ---------------------------------- -->
+  
+  <div class="ui modal load-from-url">
+    <div class="header">Load from URL</div>
+    <div class="content">
+      <div class="ui form">
+        <div class="field">
+          <input type="text" name="load_from_url_value" value="children.mp4" placeholder="Audio URL" /> 
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui cancel button">Cancel</div>
+      <div class="ui approve button">OK</div>
+    </div>
+  </div>
+  
+  
+  <!-- ---------------------------------- -->
+  
   <script src="script.js"></script>
+  <script src="file-loader.js"></script>
 </body>
 </html>

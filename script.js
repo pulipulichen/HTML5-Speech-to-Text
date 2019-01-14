@@ -305,6 +305,8 @@ let downloadCaption = function () {
 }
 $('.button.download-btn').click(downloadCaption)
 
+// ---------------------
+
 /**
  * 程式開始時就先開始播放
  */
