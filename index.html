@@ -66,10 +66,16 @@
     </div>
     <div class="twelve wide column">
       <div id="audio_player">
+        <!--
         <video controls class="audio-player" style="display: block;max-width: 320px;max-height: 180px;">
           <source src="chi.mp4" type="video/mp4">
           Your browser does not support the audio element.
         </video>
+        -->
+        <audio controls>
+          <source src="chi.aac" type="audio/aac">
+          Your browser does not support the audio element.
+        </audio>
       </div>
     </div>
   </div>
@@ -79,7 +85,7 @@
     <div class="three fields content-controller">
       <div class="field">
         <label>File</label>
-        <input type="text" class="filename" value="test" />
+        <input type="text" class="filename" v-model="filename" />
       </div>
       <div class="field">
         <label>Language</label>
@@ -152,13 +158,23 @@
     <div class="content">
       <div class="ui form">
         <div class="field">
-          <input type="text" name="load_from_url_value" v-model="loadFromURLValue" placeholder="Audio URL" /> 
+          <input type="text" name="load_from_url_value" v-model="loadFromURLValue" placeholder="YouTube, Video, or Audio URL" /> 
+        </div>
+        <div class="field">
+          支援清單：
+          <ul>
+            <li>YouTube，例如<a target="youtube_demo" href="https://www.youtube.com/watch?v=GE7sc_XvJ8w">https://www.youtube.com/watch?v=GE7sc_XvJ8w</a></li>
+            <li>影片格式：mp4 (<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">VP8, VP9, H.264，請見支援說明</a>)</li>
+            <li>聲音格式：wav、ogg、mp3、aac、m4a  (<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">支援說明</a>)</li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="actions">
       <div class="ui cancel button">Cancel</div>
-      <div class="ui approve button" v-bind:class="{ disabled: loadFromURLValue === '' }">OK</div>
+      <div class="ui approve button open-load-url-btn" 
+           v-bind:class="{ disabled: loadFromURLValue === '' }"
+           v-on:click="loadFromURL">OK</div>
     </div>
   </div>
   
@@ -170,5 +186,6 @@
   <script src="vue-init.js"></script>
   <script src="script.js"></script>
   <script src="file-loader.js"></script>
+  <script src="lib/youtuble-utils.js"></script>
 </body>
 </html>

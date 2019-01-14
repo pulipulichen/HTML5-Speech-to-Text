@@ -314,5 +314,5 @@ $(function () {
   setTimeout(function () {
     //$('.start-btn').click()
     //SpeechToText.addExampleRow(30)
-  }, 3000)
+  }, 1000)
 })
