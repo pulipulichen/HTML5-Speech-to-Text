@@ -9,41 +9,96 @@
   animation: 1s blink step-end infinite;
 }
 
-.content {
-  display: none;
+tbody.text-content {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 50vh;
 }
 
+tbody.text-content.hide {
+  display: none;
+}
+
+/*
 .content table {
   width: 100%;
 }
+*/
 
-.content table tbody th {
-  width: 262px;
+table tr th.start,
+table tr th.end {
+  width: 165px;
+}
+
+table tr th.hyper {
+  width: 0.5rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+table.tbody tr th.hyper {
+  padding-top: 1.1rem;
+}
+
+table tr td.caption {
+  width: calc(100vw - 37rem);
+}
+
+tbody.text-content th {
+  /*width: 1px;*/
   vertical-align: top;
   padding-top: 10px;
 }
 
-.content table tbody th input {
+tbody.text-content th input {
   text-align: right;
-  width: 3.9rem !important;
+  width: 2.1rem !important;
   font-size: 0.8rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-.content table tbody th input.hour,
-.content table tbody th input.millisecond {
-  width: 4.4rem !important;
+tbody.text-content th input.hour,
+tbody.text-content th input.millisecond {
+  width: 2.7rem !important;
 }
 
-.content table tbody td textarea {
+tbody.text-content td textarea {
   width: 100%;
   /*height: auto !important;*/
-  min-height: 3rem !important;
+  min-height: 2.1rem !important;
+  height: 2.1rem;
   max-height: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.8rem !important;
 }
 
-button.download {
-  line-height: 3rem !important;
+table.thead {
+  margin-bottom: 0 !important;
+  border-radius: .28571429rem .28571429rem 0 0 !important;
+  border-bottom-width: 0 !important;
+}
+table.tbody {
+  margin-top: 0 !important;
+  border-radius: 0 0 .28571429rem .28571429rem !important;
+  border-top-width: 0 !important;
+  display: block;
+  max-height: calc(100vh - 34rem);
+  min-height: 10rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+button.download-btn {
+  line-height: 1.4rem !important;
+  margin-top: 1.7rem !important;
+}
+
+video::-webkit-media-controls {
+  display: none;
+}
+
+h1 {
+  text-align: center;
 }

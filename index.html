@@ -11,25 +11,50 @@
   <script src="vender/download-as-file.js"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Web Speech API Demo</title>
+  <title>Webkit Speech to Text</title>
 </head>
 <body>
 
+  <div class="ui container">
+    <h1>Webkit Speech to Text</h1>
+    
+    <div class="ui warning icon message">
+      <i class="microphone icon"></i>
+      <div class="content">
+        Please install Virtual Audio Cable: 
+        <a href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html" target="_blank">Windows</a>
+        |
+        <a href="https://alternativeto.net/software/virtual-audio-cable/?platform=mac" target="_blank">Mac</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ui two column grid container">
+    <div class="four wide column">
+      <div class="fluid ui basic vertical buttons">
+        <a class="fluid ui button">
+          Load Local File
+        </a>
+        <a class="fluid ui button">
+          Load from URL
+        </a>
+      </div>
+    </div>
+    <div class="twelve wide column">
+      <div id="audio_player">
+        <video controls class="audio-player" style="display: block;max-width: 320px;max-height: 180px;">
+          <source src="chi.mp4" type="video/mp4">
+          Your browser does not support the audio element.
+        </video>
+      </div>
+    </div>
+    
+  </div>
 
-
-  <h1>Web Speech API Demo (Chinese Traditional)</h1>
-  Virtual Audio Cable
-  <a href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html" target="_blank">Windows</a>
-  |
-  <a href="https://alternativeto.net/software/virtual-audio-cable/?platform=mac" target="_blank">Mac</a>
-
-  <video controls class="audio" style="display: block;max-width: 320px;max-height: 180px;">
-    <source src="chi.mp4" type="video/mp4">
-  Your browser does not support the audio element.
-  </video>
-
-  <div class="fluid ui button primary start-btn">Start</div>
-  <form class="content ui form">
+  <div class="ui container">
+    <div class="fluid ui button primary start-btn">Start</div>
+  </div>
+  <form class="ui form container">
     <div class="three fields">
       <div class="field">
         <label>File</label>
@@ -47,7 +72,7 @@
         </select>
       </div>
       <div class="field">
-        <button type="button" class="ui fluid disabled button primary download">
+        <button type="button" class="ui fluid disabled button primary download-btn">
           <i class="icon download"></i>
           Download
         </button>
@@ -57,21 +82,25 @@
     <span class="speech"></span>
     <span class="blinking"></span>
     -->
-    <table class="ui striped table">
+    
+    <table class="ui striped table thead">
       <thead>
         <tr>
-          <th>
+          <th class="start">
             Start from
           </th>
-          <th>
+          <th class="hyper">-</th>
+          <th class="end">
             End in
           </th>
-          <th>
+          <th class="caption">
             Caption
           </th>
         </tr>
       </thead>
-      <tbody>
+    </table>
+    <table class="ui striped table tbody">
+      <tbody class="text-content">
       </tbody>
     </table>
   </form>

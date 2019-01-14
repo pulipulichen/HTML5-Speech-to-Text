@@ -1,37 +1,63 @@
 let SpeechToText = {
-  tbody: $('.content table tbody'),
-  player: $('.audio'),
+  tbody: $('tbody.text-content'),
+  player: $('.audio-player'),
   addRow: function () {
+    if (this.isLastRowEmpty()) {
+      return
+    }
+    
     let tr = $(`
       <tr>
         <th class="start">
-          <input type="number" class="hour" min="0" max="999">
+          <input type="number" class="ui mini input hour" min="0" max="999"">
           :
-          <input type="number" class="minute" min="0" max="999">
+          <input type="number" class="ui mini input minute" min="0" max="999"">
           :
-          <input type="number" class="second" min="0" max="59">
+          <input type="number" class="ui mini input second" min="0" max="59"">
           ,
-          <input type="number" class="millisecond" min="0" max="999">
+          <input type="number" class="ui mini input millisecond" min="0" max="999"">
         </th>
+        <th class="hyper">-</th>
         <th class="end">
-          <input type="number" class="hour" min="0" max="999">
+          <input type="number" class="ui mini input hour" min="0" max="999">
           :
-          <input type="number" class="minute" min="0" max="59">
+          <input type="number" class="ui mini input minute" min="0" max="59">
           :
-          <input type="number" class="second" min="0" max="59">
+          <input type="number" class="ui mini input second" min="0" max="59">
           ,
-          <input type="number" class="millisecond" min="0" max="999">
+          <input type="number" class="ui mini input millisecond" min="0" max="999">
         </th>
-        <td class="caption"><textarea></textarea></td>
+        <td class="caption"><textarea class="ui mini input"></textarea></td>
       </tr>`)
     //tr.find('textarea').autogrow({vertical: true, horizontal: false})
-    tr.find('textarea').css('height', '3rem')
+    tr.find('textarea').css('height', '2.1rem')
     this.tbody.append(tr)
 
+    // scroll to bottom
+    let container = $('table.tbody')[0]
+    container.scrollTop = container.scrollHeight;
+  },
+  addExampleRow: function (_loop) {
+    this.addRow()
+    this.tbody.find('input').val('999')
+    this.tbody.find('textarea').val('Test test test')
     
-      // scroll to bottom
-      let container = $('.content')[0]
-      container.scrollTop = container.scrollHeight;
+    if (typeof(_loop) === 'number') {
+      _loop--
+      if (_loop > 0) {
+        this.addExampleRow(_loop)
+      }
+    }
+  },
+  isLastRowEmpty: function () {
+    let lastCaption = this.tbody.find('tr:last .caption textarea')
+    if (lastCaption.length === 0) {
+      return false
+    }
+    else {
+      return (lastCaption.val().trim() === '')
+    }
+    
   },
   removeEmptyRow: function () {
     this.tbody.find('tr .caption textarea').each((i, caption) => {
@@ -138,7 +164,7 @@ let SpeechToText = {
 }
 
 let startBtn = document.querySelector('.start-btn')
-let audioPlay = document.querySelector('.audio')
+let audioPlay = document.querySelector('.audio-player')
 // audioPlay.playbackRate = 0.8
 
 let recognition = new webkitSpeechRecognition()
@@ -168,14 +194,15 @@ startBtn.addEventListener('click', function () {
   // $('<div>0:00</div>').insertBefore(text)
   recognition.start()
   this.style.display = 'none'
-  document.querySelector('.content').style.display = 'block'
+  //document.querySelector('.text-content').style.display = 'block'
+  $('.text-content').removeClass('hide')
 })
 
 let recognitionFinish = function () {
   recognition.stop()
   playingFlag = false
   SpeechToText.removeEmptyRow()
-  $('.content .button.disabled').removeClass('disabled')
+  $('.text-content .button.disabled').removeClass('disabled')
 }
 
 recognition.onresult = function (event) {
@@ -248,4 +275,14 @@ let downloadCaption = function () {
 
   downloadAsFile(title, content)
 }
-$('.button.download').click(downloadCaption)
+$('.button.download-btn').click(downloadCaption)
+
+/**
+ * 程式開始時就先開始播放
+ */
+$(function () {
+  setTimeout(function () {
+    $('.start-btn').click()
+    //SpeechToText.addExampleRow(30)
+  }, 100)
+})
