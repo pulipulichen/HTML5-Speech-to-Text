@@ -34,3 +34,5 @@ GE7sc_XvJ8w
 https://www.nikse.dk/subtitleedit/online#
 
 https://www.pkstep.com/archives/38130#%E4%B8%8B%E8%BC%89
+
+- 增加下載ods功能
