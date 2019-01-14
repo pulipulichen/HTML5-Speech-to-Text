@@ -1,6 +1,9 @@
 let SpeechToText = {
   tbody: $('tbody.text-content'),
-  player: $('.audio-player'),
+  player: null,
+  setPlayer: function () {
+    this.player = $('.audio-player')
+  },
   addRow: function () {
     if (this.isLastRowEmpty()) {
       return
@@ -187,6 +190,7 @@ startBtn.addEventListener('click', function () {
   $('.recognition-status').attr('data-recognition-status', 'wait')
   
   playingFlag = true
+  SpeechToText.setPlayer()
   SpeechToText.addRow()
   
   var errorCount = 0
@@ -215,7 +219,7 @@ startBtn.addEventListener('click', function () {
     setTimeout(() => {
       recognitionFinish()
     }, (audioPlay.duration * 1000 + 100))
-    console.log(audioPlay.duration * 1000 + 100)
+    //console.log(audioPlay.duration * 1000 + 100)
 
     // $('<div>0:00</div>').insertBefore(text)
     recognition.start()

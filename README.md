@@ -26,3 +26,4 @@ https://codepen.io/martinwolf/pen/dyLAC
 - 未能正確聽到聲音的問題 (三十秒內未發聲就出現提示 
 
 https://www.youtube.com/watch?v=GE7sc_XvJ8w
+https://youtu.be/GE7sc_XvJ8w?t=21

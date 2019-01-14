@@ -27,7 +27,7 @@ let getExtFromURL = function (url) {
     }
 
     // Now we have only extension
-    return url;
+    return url.toLowerCase();
 }
 
 let getFilenameFromURL = function (url) {
@@ -52,5 +52,5 @@ $(function () {
     //$('.start-btn').click()
     //SpeechToText.addExampleRow(30)
     //$('.open-load-url-model-btn').click()
-  }, 3000)
+  }, 1000)
 })
