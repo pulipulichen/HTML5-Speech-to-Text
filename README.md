@@ -5,6 +5,9 @@ Online Demo: https://pulipulichen.github.io/HTML5-Speech-to-Text/
 
 https://wavesurfer-js.org/
 
+# Reference
+- 華語文能力測驗關鍵詞彙：牛刀小試篇 https://www.youtube.com/watch?v=GE7sc_XvJ8w
+
 -----------------
 
 要增加功能
