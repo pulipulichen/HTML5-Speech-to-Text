@@ -4,7 +4,7 @@ let openLoadFromUrlModel = function () {
 }
 $('.open-load-url-model-btn').click(openLoadFromUrlModel)
 
-let getFilenameFromURL = function (url) {
+let getFullFilenameFromURL = function (url) {
     // Remove everything to the last slash in URL
     url = url.substr(1 + url.lastIndexOf("/"));
 
@@ -20,10 +20,22 @@ let getFilenameFromURL = function (url) {
 
 let getExtFromURL = function (url) {
     // Remove everything to the last slash in URL
-    url = getFilenameFromURL(url)
+    url = getFullFilenameFromURL(url)
     
     if (url.lastIndexOf('.') > -1) {
       url = url.slice(url.lastIndexOf('.')+1, url.length)
+    }
+
+    // Now we have only extension
+    return url;
+}
+
+let getFilenameFromURL = function (url) {
+    // Remove everything to the last slash in URL
+    url = getFullFilenameFromURL(url)
+    
+    if (url.lastIndexOf('.') > -1) {
+      url = url.slice(0, url.lastIndexOf('.'))
     }
 
     // Now we have only extension
@@ -39,6 +51,6 @@ $(function () {
   setTimeout(function () {
     //$('.start-btn').click()
     //SpeechToText.addExampleRow(30)
-    $('.open-load-url-model-btn').click()
+    //$('.open-load-url-model-btn').click()
   }, 3000)
 })

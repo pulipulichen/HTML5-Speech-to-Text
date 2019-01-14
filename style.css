@@ -95,7 +95,8 @@ button.download-btn {
   /*margin-top: 1.7rem !important;*/
 }
 
-video::-webkit-media-controls {
+video::-webkit-media-controls,
+audio {
   display: none;
 }
 
