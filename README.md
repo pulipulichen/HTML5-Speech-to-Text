@@ -28,3 +28,9 @@ https://codepen.io/martinwolf/pen/dyLAC
 https://www.youtube.com/watch?v=GE7sc_XvJ8w
 https://youtu.be/GE7sc_XvJ8w?t=21
 GE7sc_XvJ8w
+
+- 修正字幕最後的時間，不能超過影片時間
+
+https://www.nikse.dk/subtitleedit/online#
+
+https://www.pkstep.com/archives/38130#%E4%B8%8B%E8%BC%89

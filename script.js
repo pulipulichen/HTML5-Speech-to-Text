@@ -126,7 +126,7 @@ let downloadCaption = function () {
       contentItem.start.minute +
       ':'+
       contentItem.start.second +
-      ':'+
+      ','+
       contentItem.start.millisecond +
       ' --> '+
       contentItem.end.hour +
@@ -134,7 +134,7 @@ let downloadCaption = function () {
       contentItem.end.minute +
       ':'+
       contentItem.end.second +
-      ':'+
+      ','+
       contentItem.end.millisecond)
     item.push(contentItem.caption)
     content[i] = item.join('\n')
