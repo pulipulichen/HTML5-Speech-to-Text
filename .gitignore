@@ -2,5 +2,7 @@
 *.m4a
 *.ogg
 *.srt
+*.aac
 !chi.mp4
 !chi.srt
+!chi.ogg

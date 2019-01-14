@@ -164,7 +164,7 @@ let SpeechToText = {
 }
 
 let startBtn = document.querySelector('.start-btn')
-let audioPlay = document.querySelector('.audio-player')
+let audioPlay
 // audioPlay.playbackRate = 0.8
 
 let recognition = new webkitSpeechRecognition()
@@ -181,6 +181,7 @@ adjustEndSecond = 0.5
 let playingFlag = false
 let currentCaption
 startBtn.addEventListener('click', function () {
+  audioPlay = document.querySelector('.audio-player')
   recognition.lang = $('.lang').val()
   
   $('.recognition-status').attr('data-recognition-status', 'wait')
@@ -214,6 +215,7 @@ startBtn.addEventListener('click', function () {
     setTimeout(() => {
       recognitionFinish()
     }, (audioPlay.duration * 1000 + 100))
+    console.log(audioPlay.duration * 1000 + 100)
 
     // $('<div>0:00</div>').insertBefore(text)
     recognition.start()
@@ -230,6 +232,7 @@ let recognitionFinish = function () {
   SpeechToText.removeEmptyRow()
   $('.content-controller .button.disabled').removeClass('disabled')
   $('.recognition-status').attr('data-recognition-status', 'finish')
+  console.log('finish')
 }
 
 recognition.onresult = function (event) {
