@@ -27,7 +27,7 @@ tbody.text-content.hide {
 
 table tr th.start,
 table tr th.end {
-  width: 165px;
+  width: 270px;
 }
 
 table tr th.hyper {
@@ -92,7 +92,7 @@ table.tbody {
 
 button.download-btn {
   line-height: 1.4rem !important;
-  margin-top: 1.7rem !important;
+  /*margin-top: 1.7rem !important;*/
 }
 
 video::-webkit-media-controls {
@@ -101,4 +101,21 @@ video::-webkit-media-controls {
 
 h1 {
   text-align: center;
+}
+
+.recognition-status .button {
+  display: none !important;
+}
+
+.recognition-status[data-recognition-status="ready"] .start-btn,
+.recognition-status[data-recognition-status="ready"] .buttons .button {
+  display: block !important;
+}
+
+.recognition-status[data-recognition-status='wait'] .playing-btn {
+  display: block !important;
+}
+
+.recognition-status[data-recognition-status='finish'] .finish-btn {
+  display: block !important;
 }

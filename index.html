@@ -31,14 +31,35 @@
   
   <div class="ui two column grid container">
     <div class="four wide column">
-      <div class="fluid ui basic vertical buttons">
-        <a class="fluid ui button">
-          Load Local File
-        </a>
-        <a class="fluid ui button">
-          Load from URL
-        </a>
+      
+      
+      <div class="recognition-status" data-recognition-status="ready">
+        <div class="fluid ui basic vertical buttons">
+          <a class="fluid ui button">
+            Load Local File
+          </a>
+          <a class="fluid ui button">
+            Load from URL
+          </a>
+        </div>
+        
+        
+        <div class="fluid ui icon button primary start-btn">
+          <i class="play icon"></i>
+          Start
+        </div>
+        
+        <div class="fluid ui icon disabled button warning playing-btn">
+          <i class="wait icon"></i>
+          Playing
+        </div>
+        
+        <div class="positive fluid ui icon disabled button finish-btn">
+          <i class="check icon"></i>
+          Finish
+        </div>
       </div>
+        
     </div>
     <div class="twelve wide column">
       <div id="audio_player">
@@ -48,14 +69,11 @@
         </video>
       </div>
     </div>
-    
   </div>
 
-  <div class="ui container">
-    <div class="fluid ui button primary start-btn">Start</div>
-  </div>
   <form class="ui form container">
-    <div class="three fields">
+    
+    <div class="three fields content-controller">
       <div class="field">
         <label>File</label>
         <input type="text" class="filename" value="test" />
@@ -66,18 +84,36 @@
           <option value="zh-TW">
             zh-TW
           </option>
+          <option value="zh-CN">
+            zh-CN
+          </option>
           <option value="en-US">
             en-US
           </option>
         </select>
       </div>
       <div class="field">
+        <label>Output type</label>
+        <select class="output-data-type">
+          <option value="str">
+            Subtitle (.str)
+          </option>
+          <option value="txt">
+            Plain text (.txt)
+          </option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Output download</label>
         <button type="button" class="ui fluid disabled button primary download-btn">
           <i class="icon download"></i>
           Download
         </button>
       </div>
     </div>
+    
+    <!-- ----------------------------------------- -->
+    
     <!--
     <span class="speech"></span>
     <span class="blinking"></span>
@@ -103,6 +139,7 @@
       <tbody class="text-content">
       </tbody>
     </table>
+    
   </form>
 
   <script src="script.js"></script>

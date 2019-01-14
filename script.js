@@ -170,7 +170,6 @@ let audioPlay = document.querySelector('.audio-player')
 let recognition = new webkitSpeechRecognition()
 // set params
 recognition.continuous = false
-recognition.lang = $('.lang').val()
 recognition.interimResults = true
 adjustStartSecond = -0.5
 adjustEndSecond = 0.5
@@ -182,27 +181,55 @@ adjustEndSecond = 0.5
 let playingFlag = false
 let currentCaption
 startBtn.addEventListener('click', function () {
+  recognition.lang = $('.lang').val()
+  
+  $('.recognition-status').attr('data-recognition-status', 'wait')
+  
   playingFlag = true
   SpeechToText.addRow()
+  
+  var errorCount = 0
 
-  audioPlay.play()
+  var startRecognition = function () {
+    try {
+      audioPlay.play()
+    }
+    catch (e) {
+      errorCount++
+      console.log('Audio player load failed (' + errorCount + ')')
+      
+      if (errorCount > 3) {
+        if (window.confirm('Audio player is broken. Do you want to refresh this page?')) {
+          location.reload()
+        }
+        return 
+      }
+      
+      setTimeout(function () {
+        startRecognition()
+      }, 0)
+      return
+    }
 
-  setTimeout(() => {
-    recognitionFinish()
-  }, (audioPlay.duration * 1000 + 100))
+    setTimeout(() => {
+      recognitionFinish()
+    }, (audioPlay.duration * 1000 + 100))
 
-  // $('<div>0:00</div>').insertBefore(text)
-  recognition.start()
-  this.style.display = 'none'
-  //document.querySelector('.text-content').style.display = 'block'
-  $('.text-content').removeClass('hide')
+    // $('<div>0:00</div>').insertBefore(text)
+    recognition.start()
+
+    //document.querySelector('.text-content').style.display = 'block'
+    $('.text-content').removeClass('hide')
+  }
+  startRecognition()
 })
 
 let recognitionFinish = function () {
   recognition.stop()
   playingFlag = false
   SpeechToText.removeEmptyRow()
-  $('.text-content .button.disabled').removeClass('disabled')
+  $('.content-controller .button.disabled').removeClass('disabled')
+  $('.recognition-status').attr('data-recognition-status', 'finish')
 }
 
 recognition.onresult = function (event) {
@@ -242,7 +269,8 @@ $(window).resize(function () {
 })
 
 let downloadCaption = function () {
-  let title = $('.filename').val().trim() + '.srt'
+  let filetype = $('.output-data-type').val()
+  let title = $('.filename').val().trim() + '.' + filetype
 
   let content = SpeechToText.getContent()
   for (let i = 0; i < content.length; i++) {
@@ -282,7 +310,7 @@ $('.button.download-btn').click(downloadCaption)
  */
 $(function () {
   setTimeout(function () {
-    $('.start-btn').click()
+    //$('.start-btn').click()
     //SpeechToText.addExampleRow(30)
-  }, 100)
+  }, 3000)
 })
