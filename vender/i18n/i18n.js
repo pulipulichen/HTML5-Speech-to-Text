@@ -8,7 +8,7 @@
  *
  * Last Modified 2015.07.10.165852
  */
-var i18n = (function (window, undefined) {
+i18n = (function (window, undefined) {
 
     'use strict';
 
@@ -388,6 +388,9 @@ var i18n = (function (window, undefined) {
                 }
 
                 if ('string' === typeof array) {
+                  console.log(localize)
+                  console.log(_hasOwnProperty(localize, array))
+                    console.log(array)
                     str = _hasOwnProperty(localize, array) ?
                           localize[array] :
                           array;

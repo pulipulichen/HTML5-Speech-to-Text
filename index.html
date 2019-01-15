@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <script src="vender/vue/vue.js"></script>
   <script src="vender/jquery.min.js"></script>
   <script src="vender/jquery.ns-autogrow.min.js"></script>
-  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="vender/i18n/i18n.js"></script>
+  <script src="vender/i18n/i18n-config.js"></script>
+  <script src="vender/vue/vue.js"></script>
 
   <link rel="stylesheet" type="text/css" href="vender/semantic-ui/semantic.min.css">
   <script src="vender/semantic-ui/semantic.min.js"></script>
@@ -20,12 +21,12 @@
   <div id="speechToText">
   
   <div class="ui container">
-    <h1>Webkit Speech to Text</h1>
+    <h1>{{ i18n.t('Webkit Speech to Text') }}</h1>
     
     <div class="ui warning icon message">
       <i class="microphone icon"></i>
       <div class="content">
-        Please install Virtual Audio Cable: 
+        {{ i18n.t('Please install Virtual Audio Cable:') }}
         <a href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html" target="_blank">Windows</a>
         |
         <a href="https://alternativeto.net/software/virtual-audio-cable/?platform=mac" target="_blank">Mac</a>
@@ -41,7 +42,7 @@
         
         <div class="fluid ui basic vertical buttons">
           <a class="fluid ui button open-load-local-file-model-btn">
-            Load Local File
+			{{ i18n.t('Load Local File') }}
           </a>
           <input type="file" accept=".mp4,.mp3,.ogg,.wav" id="local_file" style="display: none" />
           <a class="fluid ui button open-load-url-model-btn">
