@@ -46,24 +46,24 @@
           </a>
           <input type="file" accept=".mp4,.mp3,.ogg,.wav" id="local_file" style="display: none" />
           <a class="fluid ui button open-load-url-model-btn">
-            Load from URL
+            {{ i18n.t('Load from URL') }}
           </a>
         </div>
         
         
         <div class="fluid ui icon button primary start-btn">
           <i class="play icon"></i>
-          Start
+          {{ i18n.t('Start') }}
         </div>
         
         <div class="fluid ui icon disabled button warning playing-btn">
           <i class="wait icon"></i>
-          Playing
+          {{ i18n.t('Playing') }}
         </div>
         
         <div class="positive fluid ui icon disabled button finish-btn">
           <i class="check icon"></i>
-          Finish
+          {{ i18n.t('Finish') }}
         </div>
       </div>
         
@@ -90,39 +90,42 @@
     
     <div class="three fields content-controller">
       <div class="field">
-        <label>Filename</label>
+        <label>{{ i18n.t('Filename') }}</label>
         <input type="text" class="filename" v-model="filename" />
       </div>
       <div class="field">
-        <label>Language</label>
+        <label>{{ i18n.t('Language') }}</label>
         <select class="lang">
           <option value="zh-TW">
-            zh-TW
+            {{ i18n.t('zh-TW') }}
           </option>
           <option value="zh-CN">
-            zh-CN
+            {{ i18n.t('zh-CN') }}
           </option>
           <option value="en-US">
-            en-US
+            {{ i18n.t('en-US') }}
           </option>
         </select>
       </div>
       <div class="field">
-        <label>Output type</label>
+        <label>{{ i18n.t('Output type') }}</label>
         <select class="output-data-type">
           <option value="srt">
-            Subtitle (.srt)
+            {{ i18n.t('Subtitle (.srt)') }}
           </option>
           <option value="txt">
-            Plain text (.txt)
+            {{ i18n.t('Plain text (.txt)') }}
+          </option>
+          <option value="ods">
+            {{ i18n.t('OpenDocument Spreadsheet (.ods)') }}
           </option>
         </select>
       </div>
       <div class="field">
-        <label>Output download</label>
+        <label>{{ i18n.t('Output download') }}</label>
         <button type="button" class="ui fluid disabled button primary download-btn">
           <i class="icon download"></i>
-          Download
+          {{ i18n.t('Download') }}
         </button>
       </div>
     </div>
@@ -138,14 +141,14 @@
       <thead>
         <tr>
           <th class="start">
-            Start from
+            {{ i18n.t('Start from') }}
           </th>
           <th class="hyper">-</th>
           <th class="end">
-            End in
+            {{ i18n.t('End in') }}
           </th>
           <th class="caption">
-            Caption
+            {{ i18n.t('Caption') }}
           </th>
         </tr>
       </thead>
@@ -160,27 +163,27 @@
   <!-- ---------------------------------- -->
   
   <div class="ui modal load-from-url">
-    <div class="header">Load from URL</div>
+    <div class="header">{{ i18n.t('Load from URL') }}</div>
     <div class="content">
       <div class="ui form">
         <div class="field">
           <input type="text" name="load_from_url_value" v-model="loadFromURLValue" placeholder="YouTube, Video, or Audio URL" /> 
         </div>
         <div class="field">
-          支援清單：
+          {{ i18n.t('Support:') }}
           <ul>
-            <li>YouTube，例如<a target="youtube_demo" href="https://www.youtube.com/watch?v=GE7sc_XvJ8w">https://www.youtube.com/watch?v=GE7sc_XvJ8w</a></li>
-            <li>影片格式：mp4 (<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">VP8, VP9, H.264，請見支援說明</a>)</li>
-            <li>聲音格式：wav、ogg、mp3  (<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">支援說明</a>)</li>
+            <li>{{ i18n.t('YouTube, for example: ') }}<a target="youtube_demo" href="https://www.youtube.com/watch?v=GE7sc_XvJ8w">https://www.youtube.com/watch?v=GE7sc_XvJ8w</a></li>
+            <li>{{ i18n.t('Video:') }} <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">{{ i18n.t('MP4 format with code VP8, VP9, H.264') }}</a></li>
+            <li>{{ i18n.t('Audio:') }} <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">{{ i18n.t('wav, ogg, mp3 format') }}</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="actions">
-      <div class="ui cancel button">Cancel</div>
+      <div class="ui cancel button">{{ i18n.t('Cancel') }}</div>
       <div class="ui approve button open-load-url-btn" 
            v-bind:class="{ disabled: loadFromURLValue === '' }"
-           v-on:click="loadFromURL">OK</div>
+           v-on:click="loadFromURL">{{ i18n.t('OK') }}</div>
     </div>
   </div>
   

@@ -103,6 +103,7 @@ i18n = (function (window, undefined) {
                 }
             }
             xmlhttp.onreadystatechange = callback;
+            //console.log(url)
             xmlhttp.open('GET', url, false);
             xmlhttp.send(null);
         }
@@ -345,7 +346,10 @@ i18n = (function (window, undefined) {
                 lang = _hasOwnProperty(options, 'lang') ? options.lang : null;
                 path = _hasOwnProperty(options, 'path') ? options.path : path;
             }
+            console.log(lang)
+            console.log(path)
             localize = locale(lang || (navigator.browserLanguage || navigator.language).toLowerCase());
+            console.log(localize)
         },
 
         /**
@@ -359,6 +363,38 @@ i18n = (function (window, undefined) {
                       DateAdd('h', set.UTC, d ? new Date(d) : new Date()) :
                       (d ? new Date(d) : new Date());
             return r.format(set.format);
+        },
+        
+        needTransStrAry: [],
+        needTransTimer: null,
+        
+        needTrans: function (str) {
+          if (NeedTransDone === true) {
+            return
+          }
+          if (this.needTransStrAry.indexOf(str) > -1) {
+            return
+          }
+          this.needTransStrAry.push(str)
+          if (typeof(NeedTransTimer) !== 'undefined') {
+            clearTimeout(NeedTransTimer)
+          }
+          var _this = this
+          NeedTransTimer = setTimeout(function () {
+            _this.printNeedTrans()
+            //clearTimeout(this.needTransTimer)
+          }, 3000)
+        },
+        printNeedTrans: function () {
+          //console.log(this.needTransStrAry)
+          for (var i = 0; i < this.needTransStrAry.length; i++) {
+            var str = this.needTransStrAry[i]
+            str = '"' + str + '": "' + str + '"'
+            this.needTransStrAry[i] = str
+          }
+          console.log(this.needTransStrAry.join(',\n'))
+          this.needTransStrAry = []
+          NeedTransDone = true
         },
 
         /**
@@ -388,9 +424,13 @@ i18n = (function (window, undefined) {
                 }
 
                 if ('string' === typeof array) {
-                  console.log(localize)
-                  console.log(_hasOwnProperty(localize, array))
-                    console.log(array)
+                  //console.log(localize)
+                  //console.log(_hasOwnProperty(localize, array))
+                  //console.log(array)
+                  if (_hasOwnProperty(localize, array) === false) {
+                    this.needTrans(array)
+                  }
+                  
                     str = _hasOwnProperty(localize, array) ?
                           localize[array] :
                           array;
@@ -415,3 +455,6 @@ i18n = (function (window, undefined) {
 }(window));
 //#EOF
 
+
+NeedTransTimer = null
+NeedTransDone = false
