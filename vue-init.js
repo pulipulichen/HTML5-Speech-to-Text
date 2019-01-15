@@ -41,6 +41,7 @@ var app = new Vue({
       else if (type === 'audio') {
         this.loadFromURLAudio(this.loadFromURLValue, playerContainer)
       }
+      this.reset()
     },
     setFilename: function (filename) {
       // https://stackoverflow.com/a/3780731
@@ -100,6 +101,14 @@ var app = new Vue({
         else {
           return 'video'
         }
+      }
+    },
+    reset: function () {
+      SpeechToText.reset()
+    },
+    confirmReset: function () {
+      if (SpeechToText.hasContent()) {
+        return window.confirm('Text will be reset. Are you sure?')
       }
     }
   }

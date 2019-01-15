@@ -116,7 +116,8 @@ h1 {
   display: block !important;
 }
 
-.recognition-status[data-recognition-status='finish'] .finish-btn {
+.recognition-status[data-recognition-status='finish'] .finish-btn,
+.recognition-status[data-recognition-status="finish"] .buttons .button {
   display: block !important;
 }
 

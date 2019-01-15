@@ -13,26 +13,12 @@ https://wavesurfer-js.org/
 
 要增加功能
 - 開啟時就確認麥克風
-- 選取檔案的功能
-- 蓋在檔案上一層膜，讓人不能點選
-- fixed下載功能
-- 讀取檔案後就修正檔案名稱的功能
-
-開啟檔案:
-開啟本機檔案
-http://jsfiddle.net/dsbonev/cCCZ2/embedded/result,js,html,css/
-
-從網址開啟檔案 (識別聲音 影片 或是YouTube 
-https://codepen.io/martinwolf/pen/dyLAC
+- fixed下載功能: txt, ods
+- 增加下載ods功能
+- 加入確認要離開或確認要重設的功能
 
 - 未能正確聽到聲音的問題 (三十秒內未發聲就出現提示 
 
-https://www.youtube.com/watch?v=GE7sc_XvJ8w
-https://youtu.be/GE7sc_XvJ8w?t=21
-GE7sc_XvJ8w
-
 https://www.nikse.dk/subtitleedit/online#
-
 https://www.pkstep.com/archives/38130#%E4%B8%8B%E8%BC%89
 
-- 增加下載ods功能
