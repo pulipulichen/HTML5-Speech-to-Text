@@ -11,7 +11,7 @@
     "longDays": ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
     
 "Webkit Speech to Text": "Webkit Speech to Text",
-"Please install Virtual Audio Cable:": "請安裝Virtual Audio Cable：",
+"Please install and enable Virtual Audio Cable:": "請安裝並啟用Virtual Audio Cable：",
 "Load Local File": "讀取本機檔案",
 "Load from URL": "讀取網址檔案",
 "Start": "開始辨識",
@@ -34,5 +34,6 @@
 "Audio:": "聲音：",
 "wav, ogg, mp3 format": "wav、ogg、mp3格式",
 "Cancel": "取消",
-"OK": "確定"
+"OK": "確定",
+"Help": "說明"
 }

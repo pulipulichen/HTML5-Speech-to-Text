@@ -111,6 +111,12 @@ var app = new Vue({
       if (SpeechToText.hasContent()) {
         return window.confirm('Text will be reset. Are you sure?')
       }
+    },
+    grantMicrophonePermission: function () {
+      VoiceAccess.grantMicrophonePermission()
+    },
+    openVirtualAudioCableHelpModel: function () {
+      $('.ui.modal.virtual-audio-cable-help-modal').modal('show')
     }
   }
 })

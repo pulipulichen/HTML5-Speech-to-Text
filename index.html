@@ -26,10 +26,14 @@
     <div class="ui warning icon message">
       <i class="microphone icon"></i>
       <div class="content">
-        {{ i18n.t('Please install Virtual Audio Cable:') }}
+        {{ i18n.t('Please install and enable Virtual Audio Cable:') }}
         <a href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html" target="_blank">Windows</a>
         |
         <a href="https://alternativeto.net/software/virtual-audio-cable/?platform=mac" target="_blank">Mac</a>
+        
+        <div class="ui button" v-on:click="openVirtualAudioCableHelpModel">
+          {{ i18n.t('Help') }}
+        </div>
       </div>
     </div>
   </div>
