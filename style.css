@@ -84,8 +84,8 @@ table.tbody {
   border-radius: 0 0 .28571429rem .28571429rem !important;
   border-top-width: 0 !important;
   display: block;
-  max-height: calc(100vh - 34rem);
-  min-height: 10rem;
+  max-height: calc(100vh - 35rem);
+  min-height: 9rem;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -123,4 +123,8 @@ h1 {
 
 #audio_player iframe {
   pointer-events: none;
+}
+
+.virtual-audio-cable-warning {
+  margin-bottom: 0.5rem !important;
 }

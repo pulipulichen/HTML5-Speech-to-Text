@@ -23,18 +23,22 @@
   <div class="ui container">
     <h1>{{ i18n.t('Webkit Speech to Text') }}</h1>
     
-    <div class="ui warning icon message">
+    <div class="ui floating compact warning icon message virtual-audio-cable-warning">
       <i class="microphone icon"></i>
-      <div class="content">
-        {{ i18n.t('Please install and enable Virtual Audio Cable:') }}
-        <a href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html" target="_blank">Windows</a>
-        |
-        <a href="https://alternativeto.net/software/virtual-audio-cable/?platform=mac" target="_blank">Mac</a>
+      
         
-        <div class="ui button" v-on:click="openVirtualAudioCableHelpModel">
+      <div class="content">
+            {{ i18n.t('Please install and enable Virtual Audio Cable:') }}
+            <a href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html" target="_blank">Windows</a>
+            |
+            <a href="https://alternativeto.net/software/virtual-audio-cable/?platform=mac" target="_blank">Mac</a>
+            
+          
+      </div>
+      
+        <div class="ui warning mini basic button right floated" v-on:click="openVirtualAudioCableHelpModel">
           {{ i18n.t('Help') }}
         </div>
-      </div>
     </div>
   </div>
   
@@ -92,12 +96,12 @@
 
   <form class="ui form container">
     
-    <div class="three fields content-controller">
-      <div class="field">
+    <div class="four fields content-controller">
+      <div class="six wide field">
         <label>{{ i18n.t('Filename') }}</label>
         <input type="text" class="filename" v-model="filename" />
       </div>
-      <div class="field">
+      <div class="four wide field">
         <label>{{ i18n.t('Language') }}</label>
         <select class="lang">
           <option value="zh-TW">
@@ -111,7 +115,7 @@
           </option>
         </select>
       </div>
-      <div class="field">
+      <div class="four wide field">
         <label>{{ i18n.t('Output type') }}</label>
         <select class="output-data-type">
           <option value="srt" selected>
@@ -125,7 +129,7 @@
           </option>
         </select>
       </div>
-      <div class="field">
+      <div class="two wide field">
         <label>{{ i18n.t('Output download') }}</label>
         <button type="button" class="ui fluid disabled button primary download-btn">
           <i class="icon download"></i>
@@ -204,6 +208,22 @@
            v-on:click="grantMicrophonePermission">{{ i18n.t('Grant') }}</div>
     </div>
   </div>
+  
+  <div class="ui modal virtual-audio-cable-help-modal">
+    <div class="header">{{ i18n.t('Grant Microphone Permission') }}</div>
+    <div class="content">
+      <div class="ui form">
+        {{ i18n.t('Open your Sound setting. Set Virtual Audio Cable default in playback and recording.') }} <br />
+        <img src="img/sound-playback.png" />
+        <img src="img/sound-recording.png" />
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui approve button">{{ i18n.t('OK') }}</div>
+    </div>
+  </div>
+  
+  <!-- ---------------------------------- -->
   
   </div> <!-- <div id="speechToText"> -->
   
