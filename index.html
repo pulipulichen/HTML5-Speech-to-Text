@@ -186,6 +186,20 @@
            v-on:click="loadFromURL">{{ i18n.t('OK') }}</div>
     </div>
   </div>
+                                                                                                    
+  <div class="ui modal voice-access-modal">
+    <div class="header">{{ i18n.t('Grant Microphone Permission') }}</div>
+    <div class="content">
+      <div class="ui form">
+        {{ i18n.t('This APP use your microphone. Please grant microphone permission.') }} <br />
+        <img src="img/microphone-permission.png" />
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui approve button" 
+           v-on:click="grantMicrophonePermission">{{ i18n.t('Grant') }}</div>
+    </div>
+  </div>
   
   </div> <!-- <div id="speechToText"> -->
   
@@ -204,6 +218,7 @@
   <script src="lib/youtuble-utils.js"></script>
   <script src="lib/output-download.js"></script>
   <script src="lib/recognition.js"></script>
+  <script src="lib/voice-access.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

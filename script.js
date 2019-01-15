@@ -8,7 +8,7 @@
 $(function () {
   setTimeout(function () {
     //$('.start-btn').click()
-    SpeechToText.addExampleRow(3)
+    //SpeechToText.addExampleRow(3)
     
     /*
 console.log(xlsx_helper_ods_download('t', {
