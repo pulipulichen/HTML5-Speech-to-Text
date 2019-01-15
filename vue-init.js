@@ -109,7 +109,7 @@ var app = new Vue({
     },
     confirmReset: function () {
       if (SpeechToText.hasContent()) {
-        return window.confirm('Text will be reset. Are you sure?')
+        return window.confirm(i18n.t('Text will be reset. Are you sure?'))
       }
     },
     grantMicrophonePermission: function () {

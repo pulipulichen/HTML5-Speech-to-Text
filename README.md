@@ -12,9 +12,6 @@ https://wavesurfer-js.org/
 -----------------
 
 要增加功能
-- 開啟時就確認麥克風
-- 加入確認要離開或確認要重設的功能
-
 - 未能正確聽到聲音的問題 (三十秒內未發聲就出現提示 
 
 https://www.nikse.dk/subtitleedit/online#
