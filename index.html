@@ -210,13 +210,14 @@
   </div>
   
   <div class="ui modal virtual-audio-cable-help-modal">
-    <div class="header">{{ i18n.t('Grant Microphone Permission') }}</div>
+    <div class="header">{{ i18n.t('Enable Virtual Audio Cable') }}</div>
     <div class="content">
-      <div class="ui form">
-        {{ i18n.t('Open your Sound setting. Set Virtual Audio Cable default in playback and recording.') }} <br />
+        {{ i18n.t('Open your Sound setting.', false) }}
+        {{ i18n.t('Set Virtual Audio Cable default in playback and recording.', false) }}
+         
+         <br />
         <img src="img/sound-playback.png" />
         <img src="img/sound-recording.png" />
-      </div>
     </div>
     <div class="actions">
       <div class="ui approve button">{{ i18n.t('OK') }}</div>

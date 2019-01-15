@@ -37,5 +37,8 @@
 "OK": "確定",
 "Help": "說明",
 "Grant Microphone Permission": "啟用麥克風權限",
-"Grant": "允許"
+"Grant": "允許",
+"Enable Virtual Audio Cable": "啟用Virtual Audio Cable",
+"Open your Sound setting.": "開啟聲音設定，",
+"Set Virtual Audio Cable default in playback and recording.": "在播放和錄音中，將Virtual Audio Cable設為預設。"
 }
