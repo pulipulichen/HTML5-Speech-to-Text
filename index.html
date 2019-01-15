@@ -110,14 +110,14 @@
       <div class="field">
         <label>{{ i18n.t('Output type') }}</label>
         <select class="output-data-type">
-          <option value="srt">
+          <option value="srt" selected>
             {{ i18n.t('Subtitle (.srt)') }}
-          </option>
-          <option value="txt">
-            {{ i18n.t('Plain text (.txt)') }}
           </option>
           <option value="ods">
             {{ i18n.t('OpenDocument Spreadsheet (.ods)') }}
+          </option>
+          <option value="txt">
+            {{ i18n.t('Plain text (.txt)') }}
           </option>
         </select>
       </div>

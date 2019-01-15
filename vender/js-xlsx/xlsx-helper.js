@@ -1,14 +1,31 @@
+/**
+ * 主要程式
+ * @param {type} filename
+ * @param {type} data 關於data，請看data-example.json
+ */
 xlsx_helper_ods_download = function (filename, data) {
-  xlsx_helper_create('ods', filename, data)
+  //console.log(filename)
+  console.log(data)
+  xlsx_helper_create('ods', filename, data, true)
 }
 
-var xlsx_helper_create = function (type, filename, data) {
+var xlsx_helper_create = function (type, filename, data, isDownload) {
     //console.log(filename);
     //var elt = document.getElementById('data-table');
     //var wb = XLSX.utils.table_to_book(elt, {sheet: "Sheet JS"});
     
     var wb = XLSX.utils.book_new();
     if (Array.isArray(data)) {
+      // 檢查下兩層是不是物件
+      for (var i = 0; i < data.length; i++) {
+        for (var key in data[i]) {
+          var value = data[i][key]
+          if (typeof(value) === 'object') {
+            data[i][key] = JSON.stringify(value)
+          }
+        }
+      }
+      
         var ws = XLSX.utils.json_to_sheet(data);
         XLSX.utils.book_append_sheet(wb, ws, "data");
     }
@@ -19,6 +36,9 @@ var xlsx_helper_create = function (type, filename, data) {
                 var _tmp = [];
                 for (var _field_name in _sheet_data) {
                     var _field_value = _sheet_data[_field_name];
+                    if (typeof(_field_value) === "object") {
+                      _field_value = JSON.stringify(_field_value)
+                    }
                     _tmp.push({
                         'key': _field_name,
                         'value': _field_value
@@ -26,7 +46,6 @@ var xlsx_helper_create = function (type, filename, data) {
                 }
                 _sheet_data = _tmp;
             }
-            
             var ws = XLSX.utils.json_to_sheet(_sheet_data);
             XLSX.utils.book_append_sheet(wb, ws, _sheet_name);
         }
@@ -53,7 +72,12 @@ var xlsx_helper_create = function (type, filename, data) {
         ipcRenderer.send('save_file', filename, JSON.stringify(_filters), XLSX.write(wb, {bookType: type, bookSST: true, type: 'base64'}));
     }
     */
-    return XLSX.write(wb, {bookType: type, bookSST: true, type: 'base64'});
+    if (isDownload === false) {
+      return XLSX.write(wb, {bookType: type, bookSST: true, type: 'base64'});
+    }
+    else {
+      XLSX.writeFile(wb, filename, {bookType: type, bookSST: true})
+    }
 };
 
 var xlsx_helper_open = function (_callback) {
