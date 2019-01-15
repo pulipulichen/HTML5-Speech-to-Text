@@ -346,10 +346,10 @@ i18n = (function (window, undefined) {
                 lang = _hasOwnProperty(options, 'lang') ? options.lang : null;
                 path = _hasOwnProperty(options, 'path') ? options.path : path;
             }
-            console.log(lang)
-            console.log(path)
+            //console.log(lang)
+            //console.log(path)
             localize = locale(lang || (navigator.browserLanguage || navigator.language).toLowerCase());
-            console.log(localize)
+            //console.log(localize)
         },
 
         /**
