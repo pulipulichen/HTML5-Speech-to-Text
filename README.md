@@ -20,6 +20,8 @@ https://wavesurfer-js.org/
 
 開啟檔案:
 開啟本機檔案
+http://jsfiddle.net/dsbonev/cCCZ2/embedded/result,js,html,css/
+
 從網址開啟檔案 (識別聲音 影片 或是YouTube 
 https://codepen.io/martinwolf/pen/dyLAC
 
@@ -28,8 +30,6 @@ https://codepen.io/martinwolf/pen/dyLAC
 https://www.youtube.com/watch?v=GE7sc_XvJ8w
 https://youtu.be/GE7sc_XvJ8w?t=21
 GE7sc_XvJ8w
-
-- 修正字幕最後的時間，不能超過影片時間
 
 https://www.nikse.dk/subtitleedit/online#
 
