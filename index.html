@@ -49,11 +49,13 @@
       <div class="recognition-status" data-recognition-status="ready">
         
         <div class="fluid ui basic vertical buttons">
-          <a class="fluid ui button open-load-local-file-model-btn">
+          <a class="fluid ui icon button open-load-local-file-model-btn">
+            <i class="hdd outline icon"></i>
 			{{ i18n.t('Load Local File') }}
           </a>
           <input type="file" accept=".mp4,.mp3,.ogg,.wav" id="local_file" style="display: none" />
-          <a class="fluid ui button open-load-url-model-btn">
+          <a class="fluid ui icon button open-load-url-model-btn">
+            <i class="cloud icon"></i>
             {{ i18n.t('Load from URL') }}
           </a>
         </div>
