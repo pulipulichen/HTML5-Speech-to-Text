@@ -95,7 +95,7 @@ button.download-btn {
   /*margin-top: 1.7rem !important;*/
 }
 
-video::-webkit-media-controls, audio {
+audio {
   display: none;
 }
 
@@ -121,7 +121,8 @@ h1 {
   display: block !important;
 }
 
-#audio_player iframe {
+#audio_player iframe,
+#audio_player video {
   pointer-events: none;
 }
 
