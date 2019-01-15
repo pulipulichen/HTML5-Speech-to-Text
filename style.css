@@ -119,3 +119,7 @@ h1 {
 .recognition-status[data-recognition-status='finish'] .finish-btn {
   display: block !important;
 }
+
+#audio_player iframe {
+  pointer-events: none;
+}
