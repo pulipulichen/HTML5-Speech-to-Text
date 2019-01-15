@@ -12,7 +12,7 @@ https://wavesurfer-js.org/
 -----------------
 
 要增加功能
-- 未能正確聽到聲音的問題 (三十秒內未發聲就出現提示 
+- 未能正確聽到聲音的問題 (三十秒內未發聲就出現提示 <- 開始處理
 
 https://www.nikse.dk/subtitleedit/online#
 https://www.pkstep.com/archives/38130#%E4%B8%8B%E8%BC%89
