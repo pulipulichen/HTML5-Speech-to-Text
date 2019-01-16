@@ -11,3 +11,6 @@ data-persist="garlic"
 http://garlicjs.org/
 
 $('[data-persist="garlic"] input').change();
+
+不能儲存 <input type="hidden" />
+但可以 <input type="text" style="display: none" />

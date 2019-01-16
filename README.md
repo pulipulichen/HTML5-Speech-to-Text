@@ -19,6 +19,5 @@ https://www.pkstep.com/archives/38130#%E4%B8%8B%E8%BC%89
 Todo:
 
 - 撰寫blog
-- 緩存上次的內容 <- 這個，這個正在製作中
 
 不過就先這樣吧，太麻煩了
