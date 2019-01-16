@@ -117,6 +117,11 @@ var app = new Vue({
     },
     openVirtualAudioCableHelpModel: function () {
       $('.ui.modal.virtual-audio-cable-help-modal').modal('show')
+    },
+    loadDemoVideo: function () {
+      var playerContainer = $('#audio_player')
+      this.loadFromURLVideo('chi.mp4', playerContainer)
+      this.setFilename('SpeechToTextDemo')
     }
   }
 })

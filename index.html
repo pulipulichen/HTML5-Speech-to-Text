@@ -7,6 +7,7 @@
   <script src="vender/i18n/i18n.js"></script>
   <script src="vender/i18n/i18n-config.js"></script>
   <script src="vender/vue/vue.js"></script>
+  <script src="vender/garlic/garlic.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="vender/semantic-ui/semantic.min.css">
   <script src="vender/semantic-ui/semantic.min.js"></script>
@@ -57,6 +58,10 @@
           <a class="fluid ui icon button open-load-url-model-btn">
             <i class="cloud icon"></i>
             {{ i18n.t('Load from URL') }}
+          </a>
+          <a class="fluid ui icon button" v-on:click="loadDemoVideo">
+            <i class="hdd outline icon"></i>
+			{{ i18n.t('Load Demo') }}
           </a>
         </div>
         

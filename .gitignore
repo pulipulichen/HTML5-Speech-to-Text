@@ -4,6 +4,8 @@
 *.srt
 *.aac
 *.avi
+*.amr
+*.wav
 !chi.mp4
 !chi.srt
 !chi.ogg
