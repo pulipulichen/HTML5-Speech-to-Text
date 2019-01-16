@@ -66,6 +66,10 @@
           </a>
         </div>
         
+        <div class="fluid ui icon disabled button warning loading-btn">
+          <i class="wait icon"></i>
+          {{ i18n.t('Loading') }}
+        </div>
         
         <div class="fluid ui icon button primary start-btn">
           <i class="play icon"></i>
@@ -102,8 +106,8 @@
     </div>
   </div>
 
-  <form class="ui form container" data-persist="garlic">
-    <input type="text" name="setting_load_from_url" class="setting-load-from-url" v-model="loadFromURLValue" />
+  <form class="ui form container garlic-auto-save" data-persist="garlic">
+    <input type="test" name="setting_load_from_url" class="setting-load-from-url" v-model="loadFromURLValue" />
     
     <div class="four fields content-controller">
       <div class="six wide field">
@@ -190,7 +194,7 @@
         <div class="field">
           {{ i18n.t('Support:') }}
           <ul>
-            <li>{{ i18n.t('YouTube, for example: ') }}<a target="youtube_demo" href="https://www.youtube.com/watch?v=GE7sc_XvJ8w">https://www.youtube.com/watch?v=GE7sc_XvJ8w</a></li>
+            <li>{{ i18n.t('YouTube, for example: ') }}<u style='cursor: pointer;' v-on:click="loadFromURLValue='https://www.youtube.com/watch?v=GE7sc_XvJ8w'">https://www.youtube.com/watch?v=GE7sc_XvJ8w</u></li>
             <li>{{ i18n.t('Video:') }} <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">{{ i18n.t('MP4 format with code VP8, VP9, H.264') }}</a></li>
             <li>{{ i18n.t('Audio:') }} <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">{{ i18n.t('wav, ogg, mp3 format') }}</a></li>
           </ul>

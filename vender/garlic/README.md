@@ -9,3 +9,5 @@ javascript garlic
 data-persist="garlic"
 
 http://garlicjs.org/
+
+$('[data-persist="garlic"] input').change();

@@ -13,7 +13,7 @@
 "Webkit Speech to Text": "Webkit Speech to Text",
 "Please install and enable Virtual Audio Cable:": "請安裝並啟用Virtual Audio Cable：",
 "Load Local File": "讀取本機檔案",
-"Load from URL": "讀取網址檔案",
+"Load from URL": "讀取網址",
 "Start": "開始辨識",
 "Playing": "辨識中",
 "Finish": "辨識完成",

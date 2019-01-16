@@ -28,19 +28,30 @@ var app = new Vue({
     //loadFromURLValue: ''
   },
   methods: {
+    checkLoadFromURL: function () {
+      if (this.loadFromURLValue !== '') {
+        this.loadFromURL()
+      }
+    },
     loadFromURL: function (event) {
+      $('.recognition-status').attr('data-recognition-status', 'loading')
+      
       //console.log(this.loadFromURLValue)
       var type = this.detectURLtype(this.loadFromURLValue)
-      console.log(type)
+      //console.log(type)
       var playerContainer = $('#audio_player')
       if (type === 'youtube') {
-        this.loadFromURLYouTube(this.loadFromURLValue, playerContainer)
+        this.loadFromURLYouTube(this.loadFromURLValue, playerContainer, function () {
+          $('.recognition-status').attr('data-recognition-status', 'ready')
+        })
       }
       else if (type === 'video') {
         this.loadFromURLVideo(this.loadFromURLValue, playerContainer)
+        $('.recognition-status').attr('data-recognition-status', 'ready')
       }
       else if (type === 'audio') {
         this.loadFromURLAudio(this.loadFromURLValue, playerContainer)
+        $('.recognition-status').attr('data-recognition-status', 'ready')
       }
       this.reset()
     },
@@ -54,13 +65,16 @@ var app = new Vue({
       
       this.filename = filename
     },
-    loadFromURLYouTube: function (url, playerContainer) {
+    loadFromURLYouTube: function (url, playerContainer, callback) {
       var videoId = YouTubeUtils.validateYouTubeUrl(url)
       //console.log(videoId)
-      $('#audio_player').html('<div id="audio_player_youtube"></div>')
+      playerContainer.html('<div id="audio_player_youtube"></div>')
       var _this = this
       YouTubeUtils.setPlayer('audio_player_youtube', videoId, function () {
         _this.setFilename(YouTubeUtils.getTitle())
+        if (typeof(callback) === "function") {
+          callback()
+        }
       })
     },
     loadFromURLVideo: function (url, playerContainer) {
@@ -106,6 +120,7 @@ var app = new Vue({
     },
     reset: function () {
       SpeechToText.reset()
+      $('[data-persist="garlic"] input').change()
     },
     confirmReset: function () {
       if (SpeechToText.hasContent()) {
@@ -122,6 +137,10 @@ var app = new Vue({
       var playerContainer = $('#audio_player')
       this.loadFromURLVideo('chi.mp4', playerContainer)
       this.setFilename('SpeechToTextDemo')
+      this.clearLoadFromURLValue()
+    },
+    clearLoadFromURLValue: function () {
+      this.loadFromURLValue = ''
     }
   }
 })
