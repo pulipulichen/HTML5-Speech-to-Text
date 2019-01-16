@@ -112,6 +112,10 @@ h1 {
   display: block !important;
 }
 
+.recognition-status[data-recognition-status='loading'] .loading-btn {
+  display: block !important;
+}
+
 .recognition-status[data-recognition-status='wait'] .playing-btn {
   display: block !important;
 }

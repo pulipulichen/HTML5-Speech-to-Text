@@ -2,7 +2,7 @@ var app = new Vue({
   el: '#speechToText',
   data: {
     i18n: i18n,
-    filename: 'SpeechToTextDemo',
+    filename: 'SpeechToText',
     //loadFromURLValue: 'chi.ogg',
     //loadFromURLValue: 'https://www.youtube.com/watch?v=GE7sc_XvJ8w',
     loadFromURLValue: '',
@@ -29,9 +29,23 @@ var app = new Vue({
   },
   methods: {
     checkLoadFromURL: function () {
-      if (this.loadFromURLValue !== '') {
-        this.loadFromURL()
-      }
+      var _this = this
+      $(function () {
+        setTimeout(function () {
+          if ($('.setting-load-from-url').val() !== '') {
+            _this.loadFromURLValue = $('.setting-load-from-url').val()
+          }
+
+          if (_this.loadFromURLValue !== '') {
+            _this.loadFromURL()
+          }
+          else {
+            _this.loadDemoVideo()
+          }
+        }, 500)
+      })
+
+      
     },
     loadFromURL: function (event) {
       $('.recognition-status').attr('data-recognition-status', 'loading')
@@ -41,19 +55,23 @@ var app = new Vue({
       //console.log(type)
       var playerContainer = $('#audio_player')
       if (type === 'youtube') {
+        var _this = this
         this.loadFromURLYouTube(this.loadFromURLValue, playerContainer, function () {
           $('.recognition-status').attr('data-recognition-status', 'ready')
+          _this.reset()
+          //console.log('aaaa')
         })
       }
       else if (type === 'video') {
         this.loadFromURLVideo(this.loadFromURLValue, playerContainer)
         $('.recognition-status').attr('data-recognition-status', 'ready')
+        this.reset()
       }
       else if (type === 'audio') {
         this.loadFromURLAudio(this.loadFromURLValue, playerContainer)
         $('.recognition-status').attr('data-recognition-status', 'ready')
+        this.reset()
       }
-      this.reset()
     },
     setFilename: function (filename) {
       // https://stackoverflow.com/a/3780731
@@ -73,7 +91,9 @@ var app = new Vue({
       YouTubeUtils.setPlayer('audio_player_youtube', videoId, function () {
         _this.setFilename(YouTubeUtils.getTitle())
         if (typeof(callback) === "function") {
-          callback()
+          setTimeout(function () {
+            callback()
+          }, 100)
         }
       })
     },
@@ -120,7 +140,9 @@ var app = new Vue({
     },
     reset: function () {
       SpeechToText.reset()
-      $('[data-persist="garlic"] input').change()
+      setTimeout(function () {
+        $('[data-persist="garlic"] input').change()
+      }, 100)
     },
     confirmReset: function () {
       if (SpeechToText.hasContent()) {
@@ -136,11 +158,14 @@ var app = new Vue({
     loadDemoVideo: function () {
       var playerContainer = $('#audio_player')
       this.loadFromURLVideo('chi.mp4', playerContainer)
-      this.setFilename('SpeechToTextDemo')
+      this.setFilename('SpeechToText')
       this.clearLoadFromURLValue()
+      this.reset()
     },
     clearLoadFromURLValue: function () {
       this.loadFromURLValue = ''
     }
   }
 })
+
+app.checkLoadFromURL()

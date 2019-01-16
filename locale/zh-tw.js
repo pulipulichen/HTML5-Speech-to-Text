@@ -17,6 +17,7 @@
 "Start": "開始辨識",
 "Playing": "辨識中",
 "Finish": "辨識完成",
+"Loading": "讀取中",
 "Filename": "檔案名稱",
 "Language": "辨識語言",
 "zh-TW": "正體中文(zh-TW)",

@@ -7,7 +7,6 @@
  */
 $(function () {
   setTimeout(function () {
-    app.checkLoadFromURL()
     //$('.start-btn').click()
     //SpeechToText.addExampleRow(3)
     
