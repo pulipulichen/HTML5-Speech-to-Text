@@ -110,23 +110,23 @@
     <input type="text" name="setting_load_from_url" class="setting-load-from-url" style="display: none;" v-model="loadFromURLValue" />
     
     <div class="four fields content-controller">
-      <div class="six wide field">
-        <label>{{ i18n.t('Filename') }}</label>
-        <input name="setting_filename" type="text" class="filename" v-model="filename" />
-      </div>
       <div class="four wide field">
         <label>{{ i18n.t('Language') }}</label>
         <select name="setting_lang" class="lang">
-          <option value="zh-TW">
-            {{ i18n.t('zh-TW') }}
+          <option value="cmn-Hant-TW">
+            {{ i18n.t('cmn-Hant-TW') }}
           </option>
-          <option value="zh-CN">
-            {{ i18n.t('zh-CN') }}
+          <option value="cmn-Hans-CN">
+            {{ i18n.t('cmn-Hans-CN') }}
           </option>
           <option value="en-US">
             {{ i18n.t('en-US') }}
           </option>
         </select>
+      </div>
+      <div class="six wide field">
+        <label>{{ i18n.t('Filename') }}</label>
+        <input name="setting_filename" type="text" class="filename" v-model="filename" />
       </div>
       <div class="four wide field">
         <label>{{ i18n.t('Output type') }}</label>
