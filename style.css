@@ -103,7 +103,8 @@ h1 {
   text-align: center;
 }
 
-.recognition-status .button {
+.recognition-status .button,
+.recognition-status .finish-time {
   display: none !important;
 }
 
@@ -116,7 +117,8 @@ h1 {
   display: block !important;
 }
 
-.recognition-status[data-recognition-status='wait'] .playing-btn {
+.recognition-status[data-recognition-status='wait'] .playing-btn,
+.recognition-status[data-recognition-status='wait'] .finish-time {
   display: block !important;
 }
 
@@ -132,4 +134,8 @@ h1 {
 
 .virtual-audio-cable-warning {
   margin-bottom: 0.5rem !important;
+}
+
+.finish-time {
+  text-align: center;
 }

@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#speechToText',
   data: {
+    finishTime: '',
     i18n: i18n,
     filename: 'SpeechToText',
     //loadFromURLValue: 'chi.ogg',
