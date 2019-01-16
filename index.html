@@ -56,11 +56,11 @@
           </a>
           <input type="file" accept=".mp4,.mp3,.ogg,.wav" id="local_file" style="display: none" />
           <a class="fluid ui icon button open-load-url-model-btn">
-            <i class="cloud icon"></i>
+            <i class="cloud outline icon"></i>
             {{ i18n.t('Load from URL') }}
           </a>
           <a class="fluid ui icon button" v-on:click="loadDemoVideo">
-            <i class="hdd outline icon"></i>
+            <i class="bookmark outline icon"></i>
 			{{ i18n.t('Load Demo') }}
           </a>
         </div>
@@ -196,7 +196,7 @@
     </div>
     <div class="actions">
       <div class="ui cancel button">{{ i18n.t('Cancel') }}</div>
-      <div class="ui approve button open-load-url-btn" 
+      <div class="ui primary approve button open-load-url-btn" 
            v-bind:class="{ disabled: loadFromURLValue === '' }"
            v-on:click="loadFromURL">{{ i18n.t('OK') }}</div>
     </div>
@@ -211,7 +211,7 @@
       </div>
     </div>
     <div class="actions">
-      <div class="ui approve button" 
+      <div class="ui primary approve button" 
            v-on:click="grantMicrophonePermission">{{ i18n.t('Grant') }}</div>
     </div>
   </div>
