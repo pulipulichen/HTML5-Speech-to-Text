@@ -9,6 +9,7 @@ https://wavesurfer-js.org/
 - 華語文能力測驗關鍵詞彙：牛刀小試篇 https://www.youtube.com/watch?v=GE7sc_XvJ8w
 - Semantic UI: https://semantic-ui.com/globals/site.html
 - Semantic ICON: https://semantic-ui.com/elements/icon.html
+- ICON: http://www.iconninja.com/comment-chat-speak-talk-run-icon-509858
 
 -----------------
 

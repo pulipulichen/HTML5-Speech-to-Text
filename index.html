@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Webkit Speech to Text</title>
+  <link rel="icon" type="image/png" href="img/icon.png" />
 </head>
 <body>
 
@@ -101,16 +102,17 @@
     </div>
   </div>
 
-  <form class="ui form container">
+  <form class="ui form container" data-persist="garlic">
+    <input type="text" name="setting_load_from_url" class="setting-load-from-url" v-model="loadFromURLValue" />
     
     <div class="four fields content-controller">
       <div class="six wide field">
         <label>{{ i18n.t('Filename') }}</label>
-        <input type="text" class="filename" v-model="filename" />
+        <input name="setting_filename" type="text" class="filename" v-model="filename" />
       </div>
       <div class="four wide field">
         <label>{{ i18n.t('Language') }}</label>
-        <select class="lang">
+        <select name="setting_lang" class="lang">
           <option value="zh-TW">
             {{ i18n.t('zh-TW') }}
           </option>
@@ -124,7 +126,7 @@
       </div>
       <div class="four wide field">
         <label>{{ i18n.t('Output type') }}</label>
-        <select class="output-data-type">
+        <select name="setting_output_data_type" class="output-data-type">
           <option value="srt" selected>
             {{ i18n.t('Subtitle (.srt)') }}
           </option>
@@ -144,7 +146,8 @@
         </button>
       </div>
     </div>
-    
+  </form>
+  <form class="ui form container">
     <!-- ----------------------------------------- -->
     
     <!--
