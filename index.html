@@ -128,6 +128,12 @@
           <option value="en-US">
             {{ i18n.t('en-US') }}
           </option>
+          <option value="ja">
+            {{ i18n.t('ja') }}
+          </option>
+          <option value="ko">
+            {{ i18n.t('ko') }}
+          </option>
         </select>
       </div>
       <div class="six wide field">
@@ -203,7 +209,23 @@
         <div class="field">
           {{ i18n.t('Support:') }}
           <ul>
-            <li>{{ i18n.t('YouTube, for example: ') }}<u style='cursor: pointer;' v-on:click="loadFromURLValue='https://www.youtube.com/watch?v=GE7sc_XvJ8w'">https://www.youtube.com/watch?v=GE7sc_XvJ8w</u></li>
+            <li>{{ i18n.t('YouTube, for example: ') }} <br />
+              <u style='cursor: pointer;' 
+                 v-on:click="changeLang('cmn-Hant-TW');loadFromURLValue='https://www.youtube.com/watch?v=GE7sc_XvJ8w';loadFromURL()">
+                https://www.youtube.com/watch?v=GE7sc_XvJ8w 
+                ({{ i18n.t('cmn-Hant-TW') }})
+              </u>, <br />
+              <u style='cursor: pointer;' 
+                 v-on:click="changeLang('ja');loadFromURLValue='https://www.youtube.com/watch?v=P7qfM0Q2wkk';loadFromURL()">
+                https://www.youtube.com/watch?v=P7qfM0Q2wkk
+                ({{ i18n.t('ja') }})
+              </u>, <br />
+              <u style='cursor: pointer;' 
+                 v-on:click="changeLang('ko');loadFromURLValue='https://www.youtube.com/watch?v=PAKVWL7XdWo';loadFromURL()">
+                https://www.youtube.com/watch?v=PAKVWL7XdWo
+                ({{ i18n.t('ko') }})
+              </u>
+            </li>
             <li v-on:click="loadFromURLValue='chi.mp4'">{{ i18n.t('Video:') }} <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">{{ i18n.t('MP4 format with code VP8, VP9, H.264') }}</a></li>
             <li>{{ i18n.t('Audio:') }} <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">{{ i18n.t('wav, ogg, mp3 format') }}</a></li>
           </ul>

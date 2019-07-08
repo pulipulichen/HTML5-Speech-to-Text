@@ -74,6 +74,9 @@ var app = new Vue({
         this.reset()
       }
     },
+    changeLang: function (lang) {
+      $('.lang').val(lang);
+    },
     setFilename: function (filename) {
       // https://stackoverflow.com/a/3780731
       filename = filename.replace(/[|&;$%@"<>()+,]/g, "");
