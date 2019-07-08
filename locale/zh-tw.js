@@ -25,6 +25,7 @@
 "en-US": "英文(en-US)",
 "ja": "日文(ja)",
 "ko": "韓文(ko)",
+"Custom Language": "自選語言",
 "Subtitle (.srt)": "字幕檔(.srt)",
 "OpenDocument Spreadsheet (.ods)": "開放文件試算表(.ods)",
 "Plain text (.txt)": "純文字格式(.txt)",

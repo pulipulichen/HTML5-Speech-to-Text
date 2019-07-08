@@ -116,7 +116,7 @@
     <input type="text" name="setting_load_from_url" class="setting-load-from-url" style="display: none;" v-model="loadFromURLValue" />
     
     <div class="four fields content-controller">
-      <div class="four wide field">
+      <div class="three wide field">
         <label>{{ i18n.t('Language') }}</label>
         <select name="setting_lang" class="lang">
           <option value="cmn-Hant-TW">
@@ -136,7 +136,11 @@
           </option>
         </select>
       </div>
-      <div class="six wide field">
+      <div class="two wide field">
+        <label><a href='https://www.science.co.il/language/Locale-codes.php' target='locale-codes'>{{ i18n.t('Custom Language') }}</a></label>
+        <input type="text" id='customLang' model='customLang' />
+      </div>
+      <div class="five wide field">
         <label>{{ i18n.t('Filename') }}</label>
         <input name="setting_filename" type="text" class="filename" v-model="filename" />
       </div>

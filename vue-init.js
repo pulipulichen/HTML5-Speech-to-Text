@@ -7,6 +7,7 @@ var app = new Vue({
     //loadFromURLValue: 'chi.ogg',
     //loadFromURLValue: 'https://www.youtube.com/watch?v=GE7sc_XvJ8w',
     loadFromURLValue: '',
+    customLang: '',
     //extAudio: ['3gp','aa','aac','aax','act','aiff','amr','ape','au','awb','dct','dss','dvf','flac','gsm','iklax','ivs','m4a','m4b','m4p','mmf','mp3','mpc','msv','nsf','ogg, oga, mogg','opus','ra, rm','raw','sln','tta','vox','wav','wma','wv','webm','8svx'],
     
     // https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats
@@ -76,6 +77,7 @@ var app = new Vue({
     },
     changeLang: function (lang) {
       $('.lang').val(lang);
+      $('#customLang').val('');
     },
     setFilename: function (filename) {
       // https://stackoverflow.com/a/3780731
