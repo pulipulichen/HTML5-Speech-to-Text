@@ -139,3 +139,8 @@ h1 {
 .finish-time {
   text-align: center;
 }
+
+.content img {
+  width: 49%;
+  height: auto;
+}
