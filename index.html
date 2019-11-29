@@ -220,6 +220,11 @@
                 ({{ i18n.t('cmn-Hant-TW') }})
               </u>, <br />
               <u style='cursor: pointer;' 
+                 v-on:click="changeLang('cmn-Hant-TW');loadFromURLValue='https://www.youtube.com/watch?v=cUh978LguQk';loadFromURL()">
+                https://www.youtube.com/watch?v=cUh978LguQk
+                ({{ i18n.t('Long video') }})
+              </u>, <br />
+              <u style='cursor: pointer;' 
                  v-on:click="changeLang('ja');loadFromURLValue='https://www.youtube.com/watch?v=P7qfM0Q2wkk';loadFromURL()">
                 https://www.youtube.com/watch?v=P7qfM0Q2wkk
                 ({{ i18n.t('ja') }})

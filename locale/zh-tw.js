@@ -50,5 +50,6 @@
 "Open your Sound setting.": "開啟聲音設定，",
 "Set Virtual Audio Cable default in playback and recording.": "在播放裝置和錄音裝置中，將Virtual Audio Cable設為預設。",
 "Load Demo": "讀取展示影片",
-"Finish in": "完成時間"
+"Finish in": "完成時間",
+"Long video": "長影片"
 }
