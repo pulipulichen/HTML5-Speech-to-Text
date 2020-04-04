@@ -81,6 +81,9 @@ var app = new Vue({
     },
     setFilename: function (filename) {
       // https://stackoverflow.com/a/3780731
+      if (!filename) {
+        filename = 'unknown'
+      }
       filename = filename.replace(/[|&;$%@"<>()+,]/g, "");
       
       if (filename.length > 15) {
