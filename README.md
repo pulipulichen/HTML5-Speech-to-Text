@@ -6,16 +6,16 @@ This is an online speech recognition tool implemented entirely in pure JavaScrip
 
 ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEd3L1Y-skMO7N1dpljhyskNDONW5zbG7PDNbivowqWAvu7wjgCLSz2npiM7SwPaiCD7iDGL6_i1XXAuCKk5FVo3Or5x_L2-MQWsa0MBCRT7a6Bo3sNncm5fUylk1WogIUHtv4nQ/s1600/2019-01-17_151344.png)
 
-# Online Demo
+## Online Demo
 
 https://pulipulichen.github.io/HTML5-Speech-to-Text/
 
-# Technology
+## Technologies
 
 - JavaScript
 - Web Speech API: 瀏覽器內建的語音識別API。
 
-# Article
+## Article
 
 - [線上檔案語音轉文字字幕：Web Speech to Text / Speech recognition with Google Chrome: Web Speech to Text](https://blog.pulipuli.info/2019/01/web-speech-to-text-speech-recognition.html)
 
