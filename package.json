@@ -1,0 +1,33 @@
+{
+  "name": "HTML5-Speech-to-Text",
+  "version": "1.0.0",
+  "description": "This is an online speech recognition tool implemented entirely in pure JavaScript. It utilizes the browser's built-in Web Speech API to convert audio captured by the microphone into text and combines it with time segments to create subtitles.",
+  "main": "index.js",
+  "scripts": {
+    "tag": "./build/tag.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/HTML5-Speech-to-Text.git"
+  },
+  "keywords": [
+    "Web Speech API",
+    "JavaScript"
+  ],
+  "author": {
+    "name": "Yung-Ting Chen",
+    "email": "blog@pulipuli.info",
+    "orcid": "https://orcid.org/0000-0003-3751-610X",
+    "url": "https://blog.pulipuli.info"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pulipulichen/HTML5-Speech-to-Text/issues"
+  },
+  "homepage": "https://github.com/pulipulichen/HTML5-Speech-to-Text#readme",
+  "doi": "10.5281/zenodo.11213326",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
