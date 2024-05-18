@@ -21,6 +21,10 @@ https://pulipulichen.github.io/HTML5-Speech-to-Text/
 
 - [線上檔案語音轉文字字幕：Web Speech to Text / Speech recognition with Google Chrome: Web Speech to Text](https://blog.pulipuli.info/2019/01/web-speech-to-text-speech-recognition.html)
 
+# Citation
+
+Chen, Y.-T. (2024). *HTML5-Speech-to-Text* (20240518.182526) [Computer software]. Zenodo. [https://doi.org/10.5281/ZENODO.11213438](https://doi.org/10.5281/ZENODO.11213438)
+
 ----
 
 # Reference
