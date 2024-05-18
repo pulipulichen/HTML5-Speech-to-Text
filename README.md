@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/152996798.svg)](https://zenodo.org/doi/10.5281/zenodo.11213438)
+
 # HTML5-Speech-to-Text: 線上檔案語音轉文字字幕
 
 This is an online speech recognition tool implemented entirely in pure JavaScript. It utilizes the browser's built-in Web Speech API to convert audio captured by the microphone into text and combines it with time segments to create subtitles.

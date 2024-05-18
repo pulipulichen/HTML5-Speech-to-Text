@@ -11,4 +11,4 @@ repository-code: "https://github.com/pulipulichen/HTML5-Speech-to-Text"
 abstract: "This is an online speech recognition tool implemented entirely in pure JavaScript. It utilizes the browser's built-in Web Speech API to convert audio captured by the microphone into text and combines it with time segments to create subtitles."
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.11213326
+    value: 10.5281/zenodo.11213438
