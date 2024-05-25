@@ -12,7 +12,7 @@ This is an online speech recognition tool implemented entirely in pure JavaScrip
 
 https://pulipulichen.github.io/HTML5-Speech-to-Text/
 
-## Technologies
+## Techniques
 
 - JavaScript
 - Web Speech API: 瀏覽器內建的語音識別API。
